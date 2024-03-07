@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CallNumber } from '@awesome-cordova-plugins/call-number/ngx';
 import * as L from 'leaflet';
 
 @Component({
@@ -10,12 +11,18 @@ export class DatosAppPage implements OnInit {
 
   map: L.Map;
 
-  constructor() {
+  constructor(private callNumber:CallNumber) {
     this.map = {} as L.Map;
    }
 
   ngOnInit() {
   }
+
+  callPhone(){
+    this.callNumber.callNumber('657368712', true)
+    .then(() => console.log('Llamada iniciada'))
+    .catch(e => console.log('Error al iniciar la llamada', e));
+    }
 
   ionViewDidEnter(){
     this.loadMap();
@@ -31,10 +38,6 @@ export class DatosAppPage implements OnInit {
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
         .addTo(this.map);
     L.marker([latitud,longitud]).addTo(this.map);
-
-        // var markPoint = L.marker([latitud, longitud]);
-        // markPoint.bindPopup('<p>Ntra. Sra. de los Remedios - Ubrique.</p>');
-        // this.map.addLayer(markPoint);
         
       }
 

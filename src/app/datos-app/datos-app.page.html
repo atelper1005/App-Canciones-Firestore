@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Sobre Mí</ion-title>
+    <ion-title>Sobre Mi</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -20,13 +20,17 @@
     <p>Esta aplicación fue desarrolada en el instituto Ntra. Sra. de los Remedios,
        Ubrique, Cádiz. (Mirar localización en el mapa de abajo).
     </p>
-    <div id="mapId" style="width:90%; height:400px; "></div>
   </div>
+    <div id="mapId" style="width:90%; height:400px; align-self: center;"></div>
 
-
+    <!-- <ion-fab slot="fixed" vertical="bottom" horizontal="right">
+      <ion-fab-button (click)="callPhone()">
+        <ion-icon name="call-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab> -->
 </ion-content>
 
-
+<ion-toolbar>
   <ion-tabs>
     <ion-tab-bar slot="bottom">
 
@@ -37,8 +41,9 @@
       
       <ion-tab-button tab="datos-app">
         <ion-icon name="ellipse"></ion-icon>
-        <ion-label>Quién soy</ion-label>
+        <ion-label>Sobre Mi</ion-label>
       </ion-tab-button>
 
     </ion-tab-bar>
   </ion-tabs>
+</ion-toolbar>
