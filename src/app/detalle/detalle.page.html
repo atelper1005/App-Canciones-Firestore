@@ -22,8 +22,7 @@
   <ion-datetime type="date" [(ngModel)]="document.data.fechaPublicacion"></ion-datetime>
   <hr>
   <ion-label>Imagen Portada</ion-label>
-  <img *ngIf="imagenSelec || document.data.downloadURL" [src]="imagenSelec || document.data.downloadURL"
-    alt="Imagen seleccionada">
+  <img [src]="imagenSelec" *ngIf="imagenSelec">
 
   <!-- Botones de acción -->
   <ion-button (click)="seleccionarImagen()">Seleccionar Imagen</ion-button>

@@ -29,14 +29,14 @@ export class DetallePage implements OnInit {
         text: 'Cancelar',
         role:'cancel',
         handler: () => {
-          console.log('Cancelación de borrado');
+          console.log('Cancelar acción');
         },
      },
      {
         text: 'Borrar',
         role: 'confirm',
         handler: () => {
-          console.log('Pelicula borrada correctamente');
+          console.log('Canción borrada correctamente');
           this.clickBotonBorrar();
         }
      }
@@ -62,7 +62,7 @@ export class DetallePage implements OnInit {
     
   }
 
-  async subirImagenYPelicula() {
+  async subirImagenYCancion() {
     // Mensaje de espera mientras se sube la imagen
     const loading = await this.loadingController.create({
       message: 'Subiendo imagen...',
@@ -104,7 +104,7 @@ export class DetallePage implements OnInit {
     }
   }
 
-  async borrarImagenYPelicula(){
+  async borrarImagenYCancion(){
     try {
       // Primero, obtener la URL de la imagen a eliminar
       const imagenURL = this.document.data.imagenURL;
@@ -128,7 +128,7 @@ export class DetallePage implements OnInit {
     }
   }
 
-  async modificarPeliculaConImagen() {
+  async modificarCancionConImagen() {
     // Mensaje de espera mientras se sube la imagen
     const loading = await this.loadingController.create({
       message: 'Subiendo imagen...',
