@@ -18,21 +18,22 @@
   <ion-label>Autor</ion-label>
   <ion-input [(ngModel)]="document.data.autor"></ion-input>
   <hr>
-  <ion-label>Fecha de Publicación</ion-label>
+  <ion-label>Fecha de Publicación</ion-label><br>
   <ion-datetime type="date" [(ngModel)]="document.data.fechaPublicacion"></ion-datetime>
-  <hr>
-  <ion-label>Imagen Portada</ion-label>
+  <br>
+  <ion-label>Imagen Portada</ion-label><br>
   <img [src]="imagenSelec" *ngIf="imagenSelec">
 
+  <hr>
   <!-- Botones de acción -->
   <ion-button (click)="seleccionarImagen()">Seleccionar Imagen</ion-button>
   <hr>
-  <ion-button *ngIf="existeCancion==false" (click)="clickBotonInsertar()">Añadir canción</ion-button>
-  <ion-button  id="present-alert" *ngIf="existeCancion==true">Borrar canción</ion-button>
+  <ion-button *ngIf="existeCancion==false" (click)="subirImagenYCancion()">Añadir canción</ion-button>
+  <ion-button  id="present-alert" *ngIf="existeCancion==true" (click)="borrarImagenYCancion()">Borrar canción</ion-button>
   <ion-alert trigger="present-alert" header="Borrar canción, ¿Desea continuar?"
    [buttons]="alertButtons">
   </ion-alert>
-  <ion-button *ngIf="existeCancion==true" (click)="clickBotonModificar()">Modificar canción</ion-button>
+  <ion-button *ngIf="existeCancion==true" (click)="modificarCancionConImagen()">Modificar canción</ion-button>
   <ion-button (click)="clickSocialShare()">Compartir</ion-button>
   
 </ion-content>
